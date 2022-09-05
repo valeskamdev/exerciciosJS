@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiplas ações</title>
+</head>
+<body>
+    <h1>Múltiplas ações</h1>
+    <button onclick="clique()">Clique para iniciar</button>
+    <section id="result">
+        <p>Clique no botão acima para começar.</p>
+    </section>
+
+    <script>
+        function clique() {
+            var num1 = Number(window.prompt("Primeiro valor: "))
+            var num2 = Number(window.prompt("Segundo valor: "))
+            var res = window.document.querySelector("section#result")
+            var somar = num1 + num2
+            var subtrair = num1 - num2
+            var multiplicar = num1 * num2
+            var dividir = num1 / num2
+            var informacao = Number(window.prompt(`Valores informados: ${num1} e ${num2}.\nO que vamos fazer? \n [1] Somar \n [2]  Subtrair \n [3] Multiplicar \n [4] Dividir`))
+
+            if(informacao == 1) {
+                res.innerHTML = "<p>Calculando...</p>"
+                res.innerHTML += `<p>${num1} + ${num2} = <strong>${somar}</strong></p>`
+            } else if (informacao == 2) {
+                res.innerHTML = "<p>Calculando...</p>"
+                res.innerHTML += `<p>${num1} - ${num2} = <strong>${subtrair}</strong></p>`
+            }else if (informacao == 3) {
+                res.innerHTML = "<p>Calculando...</p>"
+                res.innerHTML += `<p>${num1} x ${num2} = <strong>${multiplicar}</strong></p>`
+            }else if (informacao == 4) {
+                res.innerHTML = "<p>Calculando...</p>"
+                res.innerHTML += `<p>${num1} / ${num2} = <strong>${dividir}</strong></p>`
+            }else{
+                res.innerHTML = `<p>OPÇÃO INVÁLIDA! Você digitou ${num1} e ${num2}, mas não sei o que fazer com eles.</p>`
+            }
+
+            //ou poderia ter usado SWITCH
+        }
+    </script>
+</body>
+</html>

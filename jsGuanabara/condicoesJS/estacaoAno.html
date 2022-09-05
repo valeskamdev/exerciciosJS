@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estações no Brasil</title>
+</head>
+<body>
+    <h1>Descubra a estação do ano</h1>
+    <button onclick="descubrir()">Informe o mês aqui</button>
+    <section id="result">
+        <p>Clique no botão acima para informar o mês</p>
+    </section>
+
+    <script>
+        function descubrir() {
+            var res = window.document.querySelector("section#result")
+            var mes = window.prompt("Digite o mês em extenso (ex: Setembro")
+            var estacao = 0
+
+            switch (mes.toLocaleUpperCase()) { // toUpperCase() transforma todas as letras de uma string para maiúsculas
+                case "DEZEMBRO": case "JANEIRO": case "FEVEREIRO":
+                estacao = "VERÃO"
+                break
+                case "MARÇO": case "ABRIL": case "MAIO":
+                estacao = "OUTONO"
+                break
+                case "JUNHO": case "JULHO": case "AGOSTO":
+                estacao = "INVERNO"
+                break
+                case "SETEMNRO": case "OUTUBRO": case "NOVEMBRO":
+                estacao = "PRIMAVERA"
+                break
+                default:
+                estacao = "INDEFINIDA"
+                break
+            }
+
+            res.innerHTML = `<p>No mês de <mark>${mes}</mark>, estamos na estação <mark><strong>${estacao}</strong></mark>.</p>`
+            
+
+        }
+    </script>
+</body>
+</html>

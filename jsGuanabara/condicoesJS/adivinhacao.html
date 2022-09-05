@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo em JS</title>
+</head>
+<body onload="sortear()">
+    <h1>Tente adivinhar meu número</h1>
+    <button onclick="jogar()" id="botao">Tentar adivinhar</button>
+    <section id="result">
+        <p>Já pensei em um valor entre 1 e 100...</p>
+    </section>
+
+        <script>
+            var res = window.document.querySelector("section#result")
+            var numSistema = 0
+            var numUsuario = 0
+            function sortear() {
+                var min = 1
+                var max = 100
+                var numSorteados = max - min
+                var aleatorio = Math.random()
+                numSistema = min + Math.trunc(numSorteados * aleatorio)
+            }
+
+            function jogar() {
+                numUsuario = Number(window.prompt("Qual é o seu palpite?"))
+                if(numUsuario > numSistema) {
+                    res.innerHTML += `<p>Você falou ${numUsuario}. Meu número é <strong>MENOR</strong>!</p>`
+                }else if(numUsuario < numSistema) {
+                    res.innerHTML += `<p>Você falou ${numUsuario}. Meu número é <strong>MAIOR</strong>!</p>`
+                }else {
+                    res.innerHTML += `<p><strong>PARABÉNS!</strong> Você acertou! Eu tinha sorteado o valor ${numSistema}!</p>`
+                    document.getElementById("botao").style.visibility ="hidden"
+                }
+            }
+        </script>
+</body>
+</html>

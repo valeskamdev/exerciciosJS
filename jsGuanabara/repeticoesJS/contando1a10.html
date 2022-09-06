@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando de 1 a 10</title>
+</head>
+<body>
+    <h1>Contando de 1 a 10</h1>
+    <button onclick="contar()">Contar de 1 a 10</button>
+    <section id="result">
+        <p>Aperte o botão acima par contar</p>
+    </section>
+
+    <script>
+        function contar() {
+            var res = document.querySelector("section#result")
+            res.innerHTML = "<p>Contando de 1 até 10: <br></p>"
+            for(var c = 1; c <= 10; c++) {
+                res.innerHTML += `${c} \u{1F449} `
+            } 
+            res.innerHTML += "\u{1F3C1} <br>"
+         }
+    </script>
+</body>
+</html>

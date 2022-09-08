@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando de 10 a 1</title>
+</head>
+<body>
+    <h1>Contagem regressiva de 10 a 1</h1>
+    <button onclick="contar()">Contar de 10 a 1</button>
+    <section id="result">
+        <p>Aperte o botão acima para contar</p>
+    </section>
+
+    <script>
+        var res = document.querySelector("section#result")
+        res.innerHTML = "<p>Aperte o botão acima para contar</p>"
+        function contar() {
+            res.innerHTML += "<p>Contagem Regressiva de 10 a 1</p>"
+            for(var c = 10; c >= 1; c--){
+                res.innerHTML += `${c} \u{1F449}`
+            }
+            res.innerHTML += "\u{1F3C1}"
+        }
+    </script>
+</body>
+</html>

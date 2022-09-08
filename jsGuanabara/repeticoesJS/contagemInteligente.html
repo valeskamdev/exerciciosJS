@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem inteligente</title>
+</head>
+<body>
+    <h1>Contagem "inteligente"</h1>
+    <p>Use qualquer valor nas caixas, simule contagens crescentes e regressivas. Use também valores negativos.</p>
+    <section>
+        <form action="#" method="get"></form>
+        <label for="numtxt1">Valor inicial:</label> 
+        <input type="number" name="numtxt1" id="numtxt1"> <br>
+        <label for="numtxt2">Valor final:</label>
+        <input type="number" name="numtxt2" id="numtxt2"> <br>
+        <button onclick="contar()">Contar</button>
+    </section>
+    <section id="result">
+        <p>Preencha os dados acima e aperte o botão.</p>
+    </section>
+
+    <script>
+        function contar() {
+        var res = document.getElementById("result")
+        var inicial = Number(document.getElementById("numtxt1")).value
+        var final = Number(document.getElementById("numtxt2")).value
+        res.innerHTML = `<p>Contando de ${inicial} até ${final} </p>`
+        if(inicial < final){
+            //contagem crescente
+            for(var c = inicial; c <= final; c++) {
+                res.innerHTML += `${c} \u{1F449}`
+            }
+        }else if(final < inicial){
+            //contagem decrescente
+            for(var c = inicial; c >= final; c--) {
+                res.innerHTML += `${c} \u{1F449}`
+            }
+        }else {
+            res.innerHTML += "Não é possível contar, pois os números são iguais"
+        }
+        res.innerHTML += "\u{1F3C1}"
+    }
+    
+    </script>
+</body>
+</html>

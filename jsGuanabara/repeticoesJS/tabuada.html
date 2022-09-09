@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Super Tabuada</h1>
+    <p>Escreva um número na caixa a seguir e te mostrarei a tabuada dele.</p>
+    <section>
+        <form action="#" method="get"></form>
+        <label for="numtxt">Número:</label>
+        <input type="number" name="numtxt" id="numtxt">
+        <button onclick="calcular()">Tabuada</button>
+    </section>
+    <section id="result">
+        <p>Preencha os dados acima e aperte o botão.</p>
+    </section>
+
+    <script>
+        function calcular() {
+            var num = Number(document.getElementById("numtxt")).value
+            var res = document.getElementById("result")
+            res.innerHTML = `Tabuada de ${num} <br>`
+            for(var c = 1; c <= 10; c++) {
+                var multiplicacao = num * c
+                res.innerHTML += `${num} x ${c} = ${multiplicacao} <br>`
+            }
+        }
+    </script>
+</body>
+</html>

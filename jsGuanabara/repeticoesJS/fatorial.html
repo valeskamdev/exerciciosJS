@@ -26,16 +26,16 @@
             res.innerHTML = `<p>Calculando ${num}!</p>`
             var fatorial = 1
             if(num >= 1 && num <= 21){
-           for(var c = 1; c <= num; c++) {
-            fatorial *= c
-            res.innerHTML += `${c} x `
+           for(num; num > 1; num--) {
+            fatorial *= num
+            res.innerHTML += `${num} x `
             }
-            res.innerHTML += ` = <strong>${fatorial.toLocaleString("pt-BR")}</strong>`   // Usei o toLocaleString() para aparecerem os separadores de milhar/milhões/etc...
+            res.innerHTML += `1 = <strong>${fatorial.toLocaleString("pt-BR")}</strong>`   // Usei o toLocaleString() para aparecerem os separadores de milhar/milhões/etc...
             }else if(num > 21){
             res.innerHTML = "<p>O valor deve ser <strong>menor ou igual a 21</strong></p>"
              }else {
             res.innerHTML = "</p>O valor deve ser <strong>maior ou igua a 1</strong></p>"
-            }
+            } 
 
             //NAOOOO TERMINEEEEEI SABOSTA :')
          }

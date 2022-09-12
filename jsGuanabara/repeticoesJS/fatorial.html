@@ -26,9 +26,9 @@
             res.innerHTML = `<p>Calculando ${num}!</p>`
             var fatorial = 1
             if(num >= 1 && num <= 21){
-           for(var c = 1; c <= num; c++) {
-            fatorial *= c
-            res.innerHTML += `${c} x `
+           for(num; num> 1; num--) {
+            fatorial *= num
+            res.innerHTML += `${num} x `
             }
             res.innerHTML += ` = <strong>${fatorial.toLocaleString("pt-BR")}</strong>`   // Usei o toLocaleString() para aparecerem os separadores de milhar/milhões/etc...
             }else if(num > 21){

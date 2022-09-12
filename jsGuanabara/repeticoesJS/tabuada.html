@@ -21,11 +21,13 @@
 
     <script>
         function calcular() {
-            var num = Number(document.getElementById("numtxt")).value
+            var num = Number(document.getElementById("numtxt").value)
             var res = document.getElementById("result")
             res.innerHTML = `Tabuada de ${num} <br>`
+    
             for(var c = 1; c <= 10; c++) {
                 var multiplicacao = num * c
+               console.log(multiplicacao);
                 res.innerHTML += `${num} x ${c} = ${multiplicacao} <br>`
             }
         }
